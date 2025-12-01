@@ -21,10 +21,11 @@ pipeline{
     }
     post{
         always{
-            archiveArtifacts artifacts: 'artifact.txt **/out', allowEmptyArchive: true
+            archiveArtifacts artifacts: '**/artifact.txt, **/out/**', allowEmptyArchive: true
         }
     }
 
 }
+
 
 
