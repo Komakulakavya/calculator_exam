@@ -9,8 +9,9 @@ def calculator(a,b,op):
         return a / b
     else:
         return "Invalid operation"
-a=int(input("Enter first number: "))
-b=int(input("Enter second number: "))
-op=input("Enter operation: ")
+a=10
+b=50
+op='*'
 res=calculator(a,b,op)
+
 print("Result:", res)
