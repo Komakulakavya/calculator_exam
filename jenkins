@@ -21,8 +21,9 @@ pipeline{
     }
     post{
         always{
-            archiveArtifacts artifacts: 'artifact.txt **/out', alowEmptyArchive: true
+            archiveArtifacts artifacts: 'artifact.txt **/out', allowEmptyArchive: true
         }
     }
 
 }
+
