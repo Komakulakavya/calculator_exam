@@ -1,0 +1,25 @@
+pipeline{
+    agent none
+    stages{
+        stage('check out'){
+            echo "cloning repository"
+            checkout scm
+        }
+        stage('build'){
+            steps{
+                echo "building the project"
+                bat ''' python calculator.py '''
+            }
+        }
+        stage('test'){
+            steps{
+                echo "testing the project"
+            }
+        }
+    }
+    post{
+        always{
+            archiveArtifacts artifacts: 'artifact.txt **/out', alowEmptyArchive: true
+        }
+    }
+}
