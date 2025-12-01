@@ -2,8 +2,10 @@ pipeline{
     agent none
     stages{
         stage('check out'){
+            steps{
             echo "cloning repository"
             checkout scm
+        }
         }
         stage('build'){
             steps{
@@ -22,4 +24,5 @@ pipeline{
             archiveArtifacts artifacts: 'artifact.txt **/out', alowEmptyArchive: true
         }
     }
+
 }
